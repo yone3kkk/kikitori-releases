@@ -36,6 +36,18 @@ Get-FileHash .\Kikitori_<版>_x64-setup.exe -Algorithm SHA256
 ## 更新
 新しい版が出ると、アプリのホーム画面に「新しい版があります［更新する］」と出ます。更新ファイルは署名してあり、署名が合わないものは入りません。
 
+## 使っている道具とモデル
+次のものは Kikitori に含めていません。「準備」画面で、それぞれの配布元から直接ダウンロードします。
+
+| 用途 | 名前 | 作者 | ライセンス |
+|---|---|---|---|
+| 文字起こし・話者の聞き分け | [speech.cpp](https://github.com/nyosegawa/speech.cpp) | Sakasegawa | MIT |
+| 文字起こしのモデル | [parakeet-tdt_ctc-0.6b-ja](https://huggingface.co/nvidia/parakeet-tdt_ctc-0.6b-ja)（[GGUF 版](https://huggingface.co/sakasegawa/parakeet-tdt_ctc-0.6b-ja-GGUF)） | NVIDIA | CC-BY-4.0 |
+| 話者の聞き分けのモデル | [Nemotron-3-Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization)（[GGUF 版](https://huggingface.co/sakasegawa/Nemotron-3-Diarization-GGUF)） | NVIDIA | OpenMDW-1.1 |
+| 検索 | [llama.cpp](https://github.com/ggml-org/llama.cpp) | ggml-org | MIT |
+| 検索のモデル | [ruri-v3-310m](https://huggingface.co/cl-nagoya/ruri-v3-310m)（[GGUF 版](https://huggingface.co/Targoyle/ruri-v3-310m-GGUF)） | 名古屋大学 | Apache-2.0 |
+| 音声の圧縮（任意） | [FFmpeg](https://ffmpeg.org)（[LGPL 版](https://github.com/BtbN/FFmpeg-Builds)） | FFmpeg 開発者 | LGPL |
+
 ## プライバシー
 - 録音した音声と文字起こしは、選んだ保存先（PC の中）にだけ置きます
 - 要約のときは、選んだ AI（既定は Claude Code）に文字起こしが送られます。PC の中だけで完結させたい場合は、設定で Ollama を選べます
